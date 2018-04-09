@@ -9,6 +9,14 @@ Begin VB.Form HomeScreen
    ScaleHeight     =   3015
    ScaleWidth      =   4560
    StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox Text1 
+      Height          =   1695
+      Left            =   480
+      TabIndex        =   0
+      Text            =   "Text1"
+      Top             =   480
+      Width           =   2055
+   End
 End
 Attribute VB_Name = "HomeScreen"
 Attribute VB_GlobalNameSpace = False
