@@ -1,7 +1,0 @@
-____Version Info____
-
-04/04/18	11:00 PM	Subhajit Das	Ver - 0
-
-
-____Change Logs____
-Ver - 0 : Simple project creation and making of repository. 
