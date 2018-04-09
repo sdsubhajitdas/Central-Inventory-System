@@ -1,159 +1,70 @@
 VERSION 5.00
 Begin VB.Form LoginForm 
-   BorderStyle     =   0  'None
-   ClientHeight    =   6345
-   ClientLeft      =   0
-   ClientTop       =   0
-   ClientWidth     =   12540
+   BorderStyle     =   3  'Fixed Dialog
+   Caption         =   "Login"
+   ClientHeight    =   1560
+   ClientLeft      =   2835
+   ClientTop       =   3480
+   ClientWidth     =   3885
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   6345
-   ScaleWidth      =   12540
+   ScaleHeight     =   921.699
+   ScaleMode       =   0  'User
+   ScaleWidth      =   3647.805
    ShowInTaskbar   =   0   'False
-   StartUpPosition =   3  'Windows Default
-   Begin VB.Frame Frame1 
-      BackColor       =   &H00FFFFC0&
-      Caption         =   "LOGIN PAGE"
-      BeginProperty Font 
-         Name            =   "Lucida Bright"
-         Size            =   15.75
-         Charset         =   0
-         Weight          =   600
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00FF0000&
-      Height          =   6255
-      Left            =   0
+   StartUpPosition =   2  'CenterScreen
+   Begin VB.TextBox txtUserName 
+      Height          =   345
+      Left            =   1290
+      TabIndex        =   1
+      Top             =   135
+      Width           =   2325
+   End
+   Begin VB.CommandButton cmdOK 
+      Caption         =   "OK"
+      Default         =   -1  'True
+      Height          =   390
+      Left            =   495
+      TabIndex        =   4
+      Top             =   1020
+      Width           =   1140
+   End
+   Begin VB.CommandButton cmdCancel 
+      Cancel          =   -1  'True
+      Caption         =   "Cancel"
+      Height          =   390
+      Left            =   2100
+      TabIndex        =   5
+      Top             =   1020
+      Width           =   1140
+   End
+   Begin VB.TextBox txtPassword 
+      Height          =   345
+      IMEMode         =   3  'DISABLE
+      Left            =   1290
+      PasswordChar    =   "*"
+      TabIndex        =   3
+      Top             =   525
+      Width           =   2325
+   End
+   Begin VB.Label lblLabels 
+      Caption         =   "&User Name:"
+      Height          =   270
+      Index           =   0
+      Left            =   105
       TabIndex        =   0
-      Top             =   0
-      Width           =   12495
-      Begin VB.CommandButton Command2 
-         Caption         =   "EXIT"
-         BeginProperty Font 
-            Name            =   "Lucida Bright"
-            Size            =   12
-            Charset         =   0
-            Weight          =   600
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   855
-         Left            =   8520
-         TabIndex        =   4
-         Top             =   5160
-         Width           =   1695
-      End
-      Begin VB.CommandButton Command1 
-         BackColor       =   &H00FFFFC0&
-         Caption         =   "LOGIN"
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   855
-         Left            =   5520
-         MaskColor       =   &H00FFFF80&
-         TabIndex        =   3
-         Top             =   5160
-         UseMaskColor    =   -1  'True
-         Width           =   1695
-      End
-      Begin VB.TextBox Text2 
-         Height          =   735
-         Left            =   6480
-         TabIndex        =   2
-         Top             =   3720
-         Width           =   4215
-      End
-      Begin VB.TextBox Text1 
-         Height          =   735
-         Left            =   6480
-         TabIndex        =   1
-         Top             =   2280
-         Width           =   4215
-      End
-      Begin VB.Image Image1 
-         Height          =   3345
-         Left            =   480
-         Picture         =   "LoginForm.frx":0000
-         Top             =   1920
-         Width           =   3795
-      End
-      Begin VB.Label Label3 
-         Alignment       =   2  'Center
-         AutoSize        =   -1  'True
-         BackColor       =   &H00FFFFFF&
-         BackStyle       =   0  'Transparent
-         Caption         =   "PASSWORD"
-         BeginProperty Font 
-            Name            =   "Lucida Bright"
-            Size            =   12
-            Charset         =   0
-            Weight          =   600
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   270
-         Left            =   4800
-         TabIndex        =   7
-         Top             =   3960
-         Width           =   1425
-      End
-      Begin VB.Label Label2 
-         Alignment       =   2  'Center
-         AutoSize        =   -1  'True
-         BackColor       =   &H00FFFFFF&
-         BackStyle       =   0  'Transparent
-         Caption         =   "USERNAME"
-         BeginProperty Font 
-            Name            =   "Lucida Bright"
-            Size            =   12
-            Charset         =   0
-            Weight          =   600
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   270
-         Left            =   4800
-         TabIndex        =   6
-         Top             =   2400
-         Width           =   1425
-      End
-      Begin VB.Label Label1 
-         Alignment       =   2  'Center
-         AutoSize        =   -1  'True
-         BackColor       =   &H00FFFFFF&
-         BackStyle       =   0  'Transparent
-         Caption         =   "WELCOME  TO  THE  DAILY  NEEDS  SHOP"
-         BeginProperty Font 
-            Name            =   "Lucida Bright"
-            Size            =   20.25
-            Charset         =   0
-            Weight          =   600
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         ForeColor       =   &H00C00000&
-         Height          =   465
-         Left            =   1680
-         TabIndex        =   5
-         Top             =   840
-         Width           =   8655
-      End
+      Top             =   150
+      Width           =   1080
+   End
+   Begin VB.Label lblLabels 
+      Caption         =   "&Password:"
+      Height          =   270
+      Index           =   1
+      Left            =   105
+      TabIndex        =   2
+      Top             =   540
+      Width           =   1080
    End
 End
 Attribute VB_Name = "LoginForm"
@@ -161,3 +72,48 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Option Explicit
+Dim user As String
+Dim pass As String
+
+Public LoginSucceeded As Boolean
+
+Private Sub cmdCancel_Click()
+    If MsgBox("Are you sure to close this Application?", vbQuestion + vbYesNo, "System") = vbYes Then
+    'If user decides not to close
+        LoginSucceeded = True
+        Unload Me
+    Else
+        LoginSucceeded = False
+        Me.Show
+    End If
+    'If user decides to close
+    
+End Sub
+
+Private Sub cmdOK_Click()
+    user = "admin"
+    pass = "12345"
+
+    If txtUserName.Text = user Then
+        If txtPassword.Text = pass Then
+
+                'MsgBox "Username and Password Accepted!", vbInformation, "Login"
+                HomeForm.Show
+                Me.Hide
+                
+        ElseIf txtPassword.Text = "" Then
+            MsgBox "Password Field Empty!", vbExclamation, "Login"
+        Else
+     
+            MsgBox "Username and Password not Matched!", vbExclamation, "Login"
+        End If
+    ElseIf txtUserName.Text = "" Then
+        MsgBox "Username Field Empty!", vbExclamation, "Login"
+    Else
+        MsgBox "Invalid Username, try again!", , "Login"
+        txtPassword.SetFocus
+    End If
+
+End Sub
+
