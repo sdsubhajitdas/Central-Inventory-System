@@ -1,0 +1,11 @@
+____DO NOT DELETE____
+
+
+____Version Info____
+
+04/04/18	11:00 PM	Subhajit Das	Ver - 0
+09/04/18	12:40 AM	Subhajit Das	Ver - 1
+
+____Change Logs____
+Ver - 0 : Simple project creation and making of repository.
+Ver - 1 : Recreation of project and addition of login page. 
