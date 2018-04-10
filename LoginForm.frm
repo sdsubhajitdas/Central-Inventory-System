@@ -100,7 +100,7 @@ Private Sub cmdOK_Click()
 
                 'MsgBox "Username and Password Accepted!", vbInformation, "Login"
                 HomeForm.Show
-                Me.Hide
+                Unload Me
                 
         ElseIf txtPassword.Text = "" Then
             MsgBox "Password Field Empty!", vbExclamation, "Login"
