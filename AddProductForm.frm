@@ -16,6 +16,7 @@ Begin VB.Form AddProductForm
    ScaleWidth      =   13935
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton backButton 
+      BackColor       =   &H00FFFFC0&
       Caption         =   "Back"
       BeginProperty Font 
          Name            =   "Comic Sans MS"
@@ -28,6 +29,7 @@ Begin VB.Form AddProductForm
       EndProperty
       Height          =   495
       Left            =   0
+      Style           =   1  'Graphical
       TabIndex        =   13
       Top             =   0
       Width           =   735
@@ -42,6 +44,7 @@ Begin VB.Form AddProductForm
       _ExtentX        =   12515
       _ExtentY        =   9763
       _Version        =   393216
+      AllowUpdate     =   0   'False
       BackColor       =   16777152
       HeadLines       =   1
       RowHeight       =   18
@@ -416,7 +419,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim rs As ADODB.Recordset
+Dim rs As Adodb.Recordset
 Dim singleDecimal As Boolean    'To keep track of single decimal point in price.
 
 Private Sub backButton_Click()
