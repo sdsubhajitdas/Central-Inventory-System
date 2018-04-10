@@ -1,7 +1,8 @@
 VERSION 5.00
 Begin VB.Form LoginForm 
+   BackColor       =   &H00FFFFC0&
    BorderStyle     =   3  'Fixed Dialog
-   Caption         =   "Login"
+   Caption         =   "Login to Central Inventory System"
    ClientHeight    =   1560
    ClientLeft      =   2835
    ClientTop       =   3480
@@ -49,6 +50,7 @@ Begin VB.Form LoginForm
       Width           =   2325
    End
    Begin VB.Label lblLabels 
+      BackStyle       =   0  'Transparent
       Caption         =   "&User Name:"
       Height          =   270
       Index           =   0
@@ -58,6 +60,7 @@ Begin VB.Form LoginForm
       Width           =   1080
    End
    Begin VB.Label lblLabels 
+      BackStyle       =   0  'Transparent
       Caption         =   "&Password:"
       Height          =   270
       Index           =   1

@@ -2,7 +2,7 @@ VERSION 5.00
 Begin VB.Form HomeForm 
    BackColor       =   &H00FFFFC0&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Form1"
+   Caption         =   "Central Inventory System"
    ClientHeight    =   6990
    ClientLeft      =   45
    ClientTop       =   375
@@ -73,7 +73,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub addProductButton_Click()
-    AddProductFrom.Show
+    AddProductForm.Show
     Unload Me
 End Sub
 
