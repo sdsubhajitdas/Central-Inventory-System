@@ -3,21 +3,160 @@ Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form AddProductForm 
    BackColor       =   &H00FFFFC0&
+   BorderStyle     =   1  'Fixed Single
    Caption         =   "Add Product"
-   ClientHeight    =   6750
-   ClientLeft      =   120
-   ClientTop       =   465
-   ClientWidth     =   14055
+   ClientHeight    =   6780
+   ClientLeft      =   150
+   ClientTop       =   495
+   ClientWidth     =   13935
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6750
-   ScaleWidth      =   14055
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   6780
+   ScaleWidth      =   13935
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton backButton 
+      Caption         =   "Back"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   0
+      TabIndex        =   13
+      Top             =   0
+      Width           =   735
+   End
+   Begin MSDataGridLib.DataGrid DataGrid 
+      Bindings        =   "AddProductForm.frx":0000
+      Height          =   5535
+      Left            =   6840
+      TabIndex        =   12
+      Top             =   840
+      Width           =   7095
+      _ExtentX        =   12515
+      _ExtentY        =   9763
+      _Version        =   393216
+      BackColor       =   16777152
+      HeadLines       =   1
+      RowHeight       =   18
+      FormatLocked    =   -1  'True
+      BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Comic Sans MS"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Comic Sans MS"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Caption         =   "Products in Database"
+      ColumnCount     =   5
+      BeginProperty Column00 
+         DataField       =   "pid"
+         Caption         =   "Product Id"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   16393
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column01 
+         DataField       =   "name"
+         Caption         =   "Name"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   16393
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column02 
+         DataField       =   "qty"
+         Caption         =   "Quantity"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   16393
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column03 
+         DataField       =   "price"
+         Caption         =   "Price"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   16393
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column04 
+         DataField       =   "tprice"
+         Caption         =   "Total Price"
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   16393
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      SplitCount      =   1
+      BeginProperty Split0 
+         BeginProperty Column00 
+            ColumnWidth     =   1094.74
+         EndProperty
+         BeginProperty Column01 
+            ColumnWidth     =   2204.788
+         EndProperty
+         BeginProperty Column02 
+            ColumnWidth     =   900.284
+         EndProperty
+         BeginProperty Column03 
+            ColumnWidth     =   1094.74
+         EndProperty
+         BeginProperty Column04 
+            ColumnWidth     =   1454.74
+         EndProperty
+      EndProperty
+   End
    Begin MSAdodcLib.Adodc Adodc 
       Height          =   375
-      Left            =   4920
-      Top             =   5160
-      Width           =   1215
-      _ExtentX        =   2143
+      Left            =   5520
+      Top             =   5400
+      Visible         =   0   'False
+      Width           =   1200
+      _ExtentX        =   2117
       _ExtentY        =   661
       ConnectMode     =   0
       CursorLocation  =   3
@@ -38,8 +177,8 @@ Begin VB.Form AddProductForm
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   $"AddProductForm.frx":0000
-      OLEDBString     =   $"AddProductForm.frx":00A1
+      Connect         =   $"AddProductForm.frx":0014
+      OLEDBString     =   $"AddProductForm.frx":00B5
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -57,142 +196,6 @@ Begin VB.Form AddProductForm
          Strikethrough   =   0   'False
       EndProperty
       _Version        =   393216
-   End
-   Begin MSDataGridLib.DataGrid DataGrid 
-      Bindings        =   "AddProductForm.frx":0142
-      Height          =   5535
-      Left            =   7080
-      TabIndex        =   12
-      Top             =   840
-      Width           =   6855
-      _ExtentX        =   12091
-      _ExtentY        =   9763
-      _Version        =   393216
-      BackColor       =   16777215
-      BorderStyle     =   0
-      HeadLines       =   1
-      RowHeight       =   22
-      FormatLocked    =   -1  'True
-      BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Comic Sans MS"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Comic Sans MS"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "Products in Database"
-      ColumnCount     =   5
-      BeginProperty Column00 
-         DataField       =   "ID"
-         Caption         =   "ID"
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   16393
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      BeginProperty Column01 
-         DataField       =   "pid"
-         Caption         =   "pid"
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   16393
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      BeginProperty Column02 
-         DataField       =   "name"
-         Caption         =   "name"
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   16393
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      BeginProperty Column03 
-         DataField       =   "qty"
-         Caption         =   "qty"
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   16393
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      BeginProperty Column04 
-         DataField       =   "price"
-         Caption         =   "price"
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   16393
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      SplitCount      =   1
-      BeginProperty Split0 
-         BeginProperty Column00 
-            ColumnWidth     =   915.024
-         EndProperty
-         BeginProperty Column01 
-            ColumnWidth     =   915.024
-         EndProperty
-         BeginProperty Column02 
-            ColumnWidth     =   2505.26
-         EndProperty
-         BeginProperty Column03 
-            ColumnWidth     =   1005.165
-         EndProperty
-         BeginProperty Column04 
-            ColumnWidth     =   1200.189
-         EndProperty
-      EndProperty
-   End
-   Begin VB.CommandButton addProduct 
-      Caption         =   "Add New Product To Database"
-      BeginProperty Font 
-         Name            =   "Comic Sans MS"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   -1  'True
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   615
-      Left            =   120
-      TabIndex        =   11
-      Top             =   5760
-      Width           =   6615
    End
    Begin VB.TextBox pPrice 
       BeginProperty Font 
@@ -258,6 +261,23 @@ Begin VB.Form AddProductForm
       Top             =   1080
       Width           =   5055
    End
+   Begin VB.CommandButton addProduct 
+      Caption         =   "Add New Product To Database"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   120
+      TabIndex        =   11
+      Top             =   5760
+      Width           =   6615
+   End
    Begin VB.Label pTotalPriceHolder 
       BackStyle       =   0  'Transparent
       Caption         =   "Rs. "
@@ -274,7 +294,7 @@ Begin VB.Form AddProductForm
       Left            =   2040
       TabIndex        =   10
       Top             =   4920
-      Width           =   2175
+      Width           =   3495
    End
    Begin VB.Label pTotalPriceLabel 
       Alignment       =   2  'Center
@@ -396,21 +416,22 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim con As ADODB.Connection
 Dim rs As ADODB.Recordset
+Dim singleDecimal As Boolean    'To keep track of single decimal point in price.
+
+Private Sub backButton_Click()
+    'Navigation purpose returning back to home screen
+    HomeForm.Show
+    Unload Me
+End Sub
 
 Private Sub Form_Load()
     'Initializing some database parameters during form load.
-    Set con = New ADODB.Connection
-    Set rs = New ADODB.Recordset
-    'con.Open "dsn = cis-databse;uid=;pwd=;"
-    'rs.Open "Select * from product_details_table order by pid", con, adOpenDynamic, adLockBatchOptimistic
-    
+    Set rs = Adodc.Recordset
+    singleDecimal = False
 End Sub
 
 Private Sub addProduct_Click()
-    Dim totalPrice As Integer
-    
     'Checking of data.
     If Len(pId.Text) <> 0 Then              'Checking if there is no id
         If Len(pName.Text) <> 0 Then        'Checking if there is no name
@@ -420,19 +441,16 @@ Private Sub addProduct_Click()
                     pQty.Text = "1"
                 End If
                 
-                'Total price of the product is shown
-                totalPrice = Val(pQty.Text) * Val(pPrice.Text)
-                pTotalPriceHolder.Caption = "Rs. " & totalPrice
-                
                 'Adding the data to the database
-                rs.AddNew
-                rs(0).Value = pId.Text
-                rs(1).Value = pName.Text
-                rs(2).Value = pQty.Text
-                rs(3).Value = pPrice.Text
+                rs.MoveLast                     'Moving the DB cursor to last row for adding data.
+                rs.AddNew                       'Now adding a new data with the below fields.
+                rs.Fields("pid") = pId.Text
+                rs.Fields("name") = pName.Text
+                rs.Fields("qty") = pQty.Text
+                rs.Fields("price") = pPrice.Text
+                rs.Fields("tprice") = Val(pPrice.Text) * Val(pQty.Text)
                 
                 'Data is updated along with the grid.
-                rs.UpdateBatch
                 DataGrid.Refresh
                 
                 'All fields are cleared.
@@ -440,6 +458,7 @@ Private Sub addProduct_Click()
                 pName.Text = ""
                 pQty.Text = ""
                 pPrice.Text = ""
+                pTotalPriceHolder.Caption = "Rs. "
                 
             Else
                 MsgBox "Product Price must be provided"
@@ -451,3 +470,60 @@ Private Sub addProduct_Click()
         MsgBox "Product Id must be provided"
     End If
 End Sub
+
+Private Sub pPrice_Change()
+    'Updating the total price according to the qty.
+    Dim totalPrice As Double
+    Dim qty As Long
+    If Len(pQty.Text) = 0 Then      'Setting default qty to 1
+        qty = 1
+    Else
+        qty = Val(pQty.Text)
+    End If
+    
+    'Total price of the product is shown
+    totalPrice = qty * Val(pPrice.Text)
+    pTotalPriceHolder.Caption = "Rs. " & totalPrice
+    
+End Sub
+
+Private Sub pPrice_KeyPress(KeyAscii As Integer)
+    'Filtering the price
+    If KeyAscii <> 8 And KeyAscii <> 46 Then    'Ommiting "backspace" . and
+        'Length problems unclear code dont remove cause it works
+        If Len(pPrice.Text) <> 1 Or Len(pPrice.Text) <> 0 Then
+            If KeyAscii < 48 Or KeyAscii > 57 Then  'Price is between 0-9
+                MsgBox "Price should be a digit"
+                KeyAscii = 0
+            End If
+        End If
+    End If
+    
+    If KeyAscii = 46 And singleDecimal = True Then  'Filtering 2nd "."
+        KeyAscii = 0
+    End If
+    
+    If KeyAscii = 46 Then       'Counter change on 1st . encounter
+        singleDecimal = True
+    End If
+        
+End Sub
+
+Private Sub pQty_Change()
+    'Update price on qty change
+    Call pPrice_Change
+End Sub
+
+Private Sub pQty_KeyPress(KeyAscii As Integer)
+    'Filtering the price
+    If KeyAscii <> 8 Then       'Ommiting "backspace"
+        'Length problems unclear code dont remove cause it works
+        If Len(pPrice.Text) <> 1 Or Len(pPrice.Text) <> 0 Then
+            If KeyAscii < 48 Or KeyAscii > 57 Then  'Qty is between 0-9
+                MsgBox "Price should be a digit"
+                KeyAscii = 0
+            End If
+        End If
+    End If
+End Sub
+

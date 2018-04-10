@@ -1,3 +1,4 @@
 LoginForm = 0, 0, 977, 668, C, 85, 60, 883, 512, C
 HomeForm = 150, 150, 948, 602, C, 65, 45, 906, 660, C
-AddProductForm = 115, 42, 891, 495, C, 0, -1, 984, 660, C
+AddProductForm = 115, 42, 891, 495, C, 2, 6, 984, 554, C
+ViewInventoryForm = 0, 0, 0, 0, C, 130, 130, 906, 582, C

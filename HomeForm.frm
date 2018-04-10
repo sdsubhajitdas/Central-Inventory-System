@@ -30,7 +30,7 @@ Begin VB.Form HomeForm
       Top             =   6480
       Width           =   735
    End
-   Begin VB.CommandButton Command2 
+   Begin VB.CommandButton viewInventoryButton 
       Caption         =   "View Inventory"
       BeginProperty Font 
          Name            =   "Comic Sans MS"
@@ -66,6 +66,13 @@ Begin VB.Form HomeForm
       Top             =   360
       Width           =   1935
    End
+   Begin VB.Image Image1 
+      Height          =   5760
+      Left            =   1800
+      Picture         =   "HomeForm.frx":0000
+      Top             =   720
+      Width           =   5760
+   End
 End
 Attribute VB_Name = "HomeForm"
 Attribute VB_GlobalNameSpace = False
@@ -78,5 +85,10 @@ Private Sub addProductButton_Click()
 End Sub
 
 Private Sub ExitButton_Click()
+    Unload Me
+End Sub
+
+Private Sub viewInventoryButton_Click()
+    ViewInventoryForm.Show
     Unload Me
 End Sub
