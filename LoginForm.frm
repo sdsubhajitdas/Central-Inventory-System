@@ -1,73 +1,114 @@
 VERSION 5.00
 Begin VB.Form LoginForm 
    BackColor       =   &H00FFFFC0&
-   BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Login to Central Inventory System"
-   ClientHeight    =   1560
-   ClientLeft      =   2835
-   ClientTop       =   3480
-   ClientWidth     =   3885
+   ClientHeight    =   5415
+   ClientLeft      =   2910
+   ClientTop       =   3555
+   ClientWidth     =   12330
    LinkTopic       =   "Form1"
-   MaxButton       =   0   'False
-   MinButton       =   0   'False
-   ScaleHeight     =   921.699
+   ScaleHeight     =   3199.358
    ScaleMode       =   0  'User
-   ScaleWidth      =   3647.805
-   ShowInTaskbar   =   0   'False
+   ScaleWidth      =   11577.2
    StartUpPosition =   2  'CenterScreen
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   18
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   585
+      Left            =   8520
+      TabIndex        =   5
+      Text            =   "Text"
+      Top             =   2640
+      Width           =   3525
+   End
    Begin VB.TextBox txtUserName 
-      Height          =   345
-      Left            =   1290
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   18
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   585
+      Left            =   8520
       TabIndex        =   1
-      Top             =   135
-      Width           =   2325
+      Text            =   "Text"
+      Top             =   1560
+      Width           =   3525
    End
    Begin VB.CommandButton cmdOK 
       Caption         =   "OK"
       Default         =   -1  'True
       Height          =   390
-      Left            =   495
-      TabIndex        =   4
-      Top             =   1020
+      Left            =   5880
+      TabIndex        =   3
+      Top             =   4320
       Width           =   1140
    End
    Begin VB.CommandButton cmdCancel 
       Cancel          =   -1  'True
       Caption         =   "Cancel"
       Height          =   390
-      Left            =   2100
-      TabIndex        =   5
-      Top             =   1020
+      Left            =   8760
+      TabIndex        =   4
+      Top             =   3840
       Width           =   1140
    End
-   Begin VB.TextBox txtPassword 
-      Height          =   345
-      IMEMode         =   3  'DISABLE
-      Left            =   1290
-      PasswordChar    =   "*"
-      TabIndex        =   3
-      Top             =   525
-      Width           =   2325
+   Begin VB.Image Image1 
+      Height          =   4500
+      Left            =   240
+      Picture         =   "LoginForm.frx":0000
+      Top             =   480
+      Width           =   4500
    End
    Begin VB.Label lblLabels 
       BackStyle       =   0  'Transparent
-      Caption         =   "&User Name:"
-      Height          =   270
+      Caption         =   "User Name"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   20.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00404040&
+      Height          =   615
       Index           =   0
-      Left            =   105
+      Left            =   5640
       TabIndex        =   0
-      Top             =   150
-      Width           =   1080
+      Top             =   1560
+      Width           =   2295
    End
    Begin VB.Label lblLabels 
       BackStyle       =   0  'Transparent
-      Caption         =   "&Password:"
-      Height          =   270
+      Caption         =   "Password"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   20.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00404040&
+      Height          =   495
       Index           =   1
-      Left            =   105
+      Left            =   5640
       TabIndex        =   2
-      Top             =   540
-      Width           =   1080
+      Top             =   2640
+      Width           =   1815
    End
 End
 Attribute VB_Name = "LoginForm"
@@ -120,3 +161,6 @@ Private Sub cmdOK_Click()
 
 End Sub
 
+Private Sub txtPassword_Change()
+
+End Sub
