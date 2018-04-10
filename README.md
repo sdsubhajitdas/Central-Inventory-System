@@ -11,5 +11,4 @@ Follow this example.
         Also log the changes made in the changelog section of the file.
     - ###### **A VERY STRICT POINT.**
         Use good indentation and use tabs for indentation not spaces.  
-    
-    
+    - To see the work progress refer this link [Version Wise Work Log](https://github.com/Jeetu95/Central-Inventory-System/blob/master/Version%20Info.txt)
