@@ -5,9 +5,11 @@ ____Version Info____
 
 04/04/18	11:00 PM	Subhajit Das	Ver - 0
 09/04/18	12:40 AM	Subhajit Das	Ver - 1
-10/04/18	07:04 AM	Subhajit Das	Ver - 2
+10/04/18	07:04 PM	Subhajit Das	Ver - 2
+10/04/18	10:04 PM	Subhajit Das	Ver - 3
 
 ____Change Logs____
 Ver - 0 : Simple project creation and making of repository.
 Ver - 1 : Recreation of project and addition of login page.
-ver - 2 : Database was added along with product add code and filter of data. 
+Ver - 2 : Database was added along with product add code and filter of data.
+Ver - 3 : AddProductForm is finished.Data is saved to database. Full finish.
