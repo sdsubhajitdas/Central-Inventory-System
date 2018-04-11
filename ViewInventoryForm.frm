@@ -15,8 +15,27 @@ Begin VB.Form ViewInventoryForm
    ScaleHeight     =   7950
    ScaleWidth      =   13890
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton resetButton 
-      Caption         =   "Reset"
+   Begin VB.TextBox searchIdText 
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00808080&
+      Height          =   540
+      Left            =   7800
+      TabIndex        =   9
+      Text            =   "Search by Product Id"
+      ToolTipText     =   "Enter for search"
+      Top             =   960
+      Width           =   4215
+   End
+   Begin VB.CommandButton searchIdButton 
+      Caption         =   "Search"
       BeginProperty Font 
          Name            =   "Comic Sans MS"
          Size            =   12
@@ -28,11 +47,30 @@ Begin VB.Form ViewInventoryForm
       EndProperty
       Height          =   495
       Left            =   12120
-      TabIndex        =   7
-      Top             =   2400
+      TabIndex        =   8
+      Top             =   960
       Width           =   1695
    End
-   Begin VB.CommandButton searchButton 
+   Begin VB.CommandButton resetButton 
+      BackColor       =   &H00C0FFC0&
+      Caption         =   "Reset"
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   12120
+      Style           =   1  'Graphical
+      TabIndex        =   7
+      Top             =   2520
+      Width           =   1695
+   End
+   Begin VB.CommandButton searchNameButton 
       Caption         =   "Search"
       BeginProperty Font 
          Name            =   "Comic Sans MS"
@@ -49,7 +87,7 @@ Begin VB.Form ViewInventoryForm
       Top             =   120
       Width           =   1695
    End
-   Begin VB.TextBox searchText 
+   Begin VB.TextBox searchNameText 
       BeginProperty Font 
          Name            =   "Comic Sans MS"
          Size            =   11.25
@@ -211,8 +249,9 @@ Begin VB.Form ViewInventoryForm
       Height          =   495
       Left            =   720
       Top             =   0
-      Width           =   4080
-      _ExtentX        =   7197
+      Visible         =   0   'False
+      Width           =   1200
+      _ExtentX        =   2117
       _ExtentY        =   873
       ConnectMode     =   0
       CursorLocation  =   3
@@ -271,6 +310,53 @@ Begin VB.Form ViewInventoryForm
       TabIndex        =   0
       Top             =   0
       Width           =   735
+   End
+   Begin MSAdodcLib.Adodc searchAdodc 
+      Height          =   495
+      Left            =   2160
+      Top             =   0
+      Visible         =   0   'False
+      Width           =   1200
+      _ExtentX        =   2117
+      _ExtentY        =   873
+      ConnectMode     =   0
+      CursorLocation  =   3
+      IsolationLevel  =   -1
+      ConnectionTimeout=   15
+      CommandTimeout  =   30
+      CursorType      =   3
+      LockType        =   3
+      CommandType     =   2
+      CursorOptions   =   0
+      CacheSize       =   50
+      MaxRecords      =   0
+      BOFAction       =   0
+      EOFAction       =   0
+      ConnectStringType=   1
+      Appearance      =   1
+      BackColor       =   -2147483643
+      ForeColor       =   -2147483640
+      Orientation     =   0
+      Enabled         =   -1
+      Connect         =   $"ViewInventoryForm.frx":0156
+      OLEDBString     =   $"ViewInventoryForm.frx":01F7
+      OLEDBFile       =   ""
+      DataSourceName  =   ""
+      OtherAttributes =   ""
+      UserName        =   ""
+      Password        =   ""
+      RecordSource    =   "product_details_table"
+      Caption         =   ""
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      _Version        =   393216
    End
    Begin VB.Label updateLabel 
       BackStyle       =   0  'Transparent
@@ -335,27 +421,41 @@ Private Sub backButton_Click()
 End Sub
 
 Private Sub resetButton_Click()
-    Adodc.Recordset.Filter = "name Like ''"
-    'DataGrid.DataSource = Null
-    'DataGrid.DataSource = Adodc
-    'Adodc.Recordset.Filter = vbNull
+    Set DataGrid.DataSource = Adodc
     DataGrid.Refresh
 End Sub
 
-Private Sub searchButton_Click()
-    If Len(searchText.Text) = 0 Then
-        Adodc.Recordset.Filter = ""
+
+Private Sub searchNameButton_Click()
+    Set DataGrid.DataSource = searchAdodc
+    If Len(searchNameText.Text) = 0 Then
+        MsgBox "Enter something to search"
     Else
-        Adodc.Recordset.Filter = "name Like '*" & searchText.Text & "*'"
+        searchAdodc.Recordset.Filter = "name Like '*" & searchNameText.Text & "*'"
     End If
+    DataGrid.Refresh
 End Sub
 
-Private Sub searchText_GotFocus()
-    searchText.Text = ""
+Private Sub searchNameText_GotFocus()
+    searchNameText.Text = ""
 End Sub
 
-Private Sub searchText_LostFocus()
-    If Len(searchText.Text) = 0 Then
-        searchText.Text = "Search by Name"
+Private Sub searchIdButton_Click()
+    Set DataGrid.DataSource = searchAdodc
+    If Len(searchIdText.Text) = 0 Then
+        MsgBox "Enter something to search"
+    Else
+        searchAdodc.Recordset.Filter = "pid Like *" & searchIdText.Text & "*"
     End If
+    DataGrid.Refresh
 End Sub
+
+Private Sub searchIdText_GotFocus()
+    searchIdText.Text = ""
+End Sub
+
+'Private Sub searchText_LostFocus()
+'    If Len(searchText.Text) = 0 Then
+'        searchText.Text = "Search by Name"
+'    End If
+'End Sub
