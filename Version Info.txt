@@ -8,6 +8,7 @@ ____Version Info____
 10/04/18	07:04 PM	Subhajit Das	Ver - 2
 10/04/18	10:04 PM	Subhajit Das	Ver - 3
 11/04/18	02:07 AM	Subhajit Das	Ver - 4
+11/04/18	05:32 PM	Subhajit Das	Ver - 5
 
 ____Change Logs____
 Ver - 0 : Simple project creation and making of repository.
@@ -15,3 +16,4 @@ Ver - 1 : Recreation of project and addition of login page.
 Ver - 2 : Database was added along with product add code and filter of data.
 Ver - 3 : AddProductForm is finished.Data is saved to database. Full finish.
 Ver - 4 : Login Screen was redesigned with all images. Final Done
+Ver - 5 : ViewInventoryForm is finished along with searching feature by id and name. Database field "pid" type was changed to "short text" from "number" .
