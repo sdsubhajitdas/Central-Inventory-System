@@ -419,8 +419,10 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim rs As Adodb.Recordset
+Dim rs As ADODB.Recordset
 Dim singleDecimal As Boolean    'To keep track of single decimal point in price.
+
+
 
 Private Sub backButton_Click()
     'Navigation purpose returning back to home screen
@@ -473,6 +475,8 @@ Private Sub addProduct_Click()
         MsgBox "Product Id must be provided"
     End If
 End Sub
+
+
 
 Private Sub pPrice_Change()
     'Updating the total price according to the qty.
