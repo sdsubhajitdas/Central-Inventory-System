@@ -13,6 +13,24 @@ Begin VB.Form HomeForm
    ScaleHeight     =   6990
    ScaleWidth      =   9780
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton makeBillButton 
+      Caption         =   "Make a Bill "
+      BeginProperty Font 
+         Name            =   "Comic Sans MS"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   7080
+      MaskColor       =   &H8000000F&
+      TabIndex        =   4
+      Top             =   5400
+      Width           =   2175
+   End
    Begin VB.CommandButton addcustomer 
       Caption         =   "Customer Details"
       BeginProperty Font 
@@ -27,7 +45,7 @@ Begin VB.Form HomeForm
       Height          =   855
       Left            =   360
       TabIndex        =   3
-      Top             =   3000
+      Top             =   5520
       Width           =   2295
    End
    Begin VB.CommandButton ExitButton 
@@ -97,10 +115,8 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub addcustomer_Click()
-customerdetailsform.Show
-Unload Me
-
-
+    customerdetailsform.Show
+    Unload Me
 End Sub
 
 Private Sub addProductButton_Click()
@@ -109,6 +125,11 @@ Private Sub addProductButton_Click()
 End Sub
 
 Private Sub ExitButton_Click()
+    Unload Me
+End Sub
+
+Private Sub makeBillButton_Click()
+    BillForm.Show
     Unload Me
 End Sub
 
